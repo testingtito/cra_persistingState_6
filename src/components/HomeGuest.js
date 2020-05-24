@@ -1,8 +1,9 @@
 import React from 'react'
+import Page from './Page';
 
 const HomeGuest = () => {
   return (
-    <div>
+    <Page title="Welcome!" wide={true}>
       <div className="container py-md-5">
         <div className="row align-items-center">
           <div className="col-lg-7 py-3 py-md-5">
@@ -36,7 +37,7 @@ const HomeGuest = () => {
           </div>
         </div>
       </div>
-    </div>
+    </Page>
   )
 }
 
