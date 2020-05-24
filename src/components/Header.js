@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import HeaderLoggedOut from './HeaderLoggedOut';
+import HeaderLoggedIn from './HeaderLoggedIn';
 
 const Header = () => {
+  const [loggedIn, setLoggedIn] = useState();
   return (
     <div>
       <header className="header-bar bg-primary mb-3">
@@ -12,7 +14,7 @@ const Header = () => {
               ComplexApp
             </Link>
           </h4>
-          <HeaderLoggedOut />
+          {loggedIn ? <HeaderLoggedIn setLoggedIn={setLoggedIn} /> : <HeaderLoggedOut setLoggedIn={setLoggedIn} />}
         </div>
       </header>
     </div>
