@@ -4,7 +4,7 @@ import HeaderLoggedOut from './HeaderLoggedOut';
 import HeaderLoggedIn from './HeaderLoggedIn';
 
 const Header = () => {
-  const [loggedIn, setLoggedIn] = useState();
+  const [loggedIn, setLoggedIn] = useState(Boolean(localStorage.getItem("complexappToken")));
   return (
     <div>
       <header className="header-bar bg-primary mb-3">

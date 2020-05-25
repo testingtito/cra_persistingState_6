@@ -10,7 +10,9 @@ const HeaderLogOut = ({ setLoggedIn }) => {
     try {
       const response = await Axios.post("http://localhost:9876/login", { username, password })
       if (response.data) {
-        console.log(response.data);
+        localStorage.setItem("complexappToken", response.data.token);
+        localStorage.setItem("complexappUsername", response.data.username);
+        localStorage.setItem("complexappAvatar", response.data.avatar);
         setLoggedIn(true)
       } else {
         console.log("Incorrect username / password");
